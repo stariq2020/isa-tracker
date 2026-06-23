@@ -22,7 +22,7 @@ export function loadGoogleScripts(clientId: string): Promise<void> {
     if (isGoogleReady()) { resolve(undefined); return }
 
     let loaded = 0
-    const done = () => { if (++loaded === 2) resolve() }
+    const done = () => { if (++loaded === 2) resolve(undefined) }
 
     const gsi = document.createElement('script')
     gsi.src = 'https://accounts.google.com/gsi/client'
