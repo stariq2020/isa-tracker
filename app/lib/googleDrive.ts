@@ -19,7 +19,7 @@ export function isGoogleReady(): boolean {
 
 export function loadGoogleScripts(clientId: string): Promise<void> {
   return new Promise((resolve, reject) => {
-    if (isGoogleReady()) { resolve(); return }
+    if (isGoogleReady()) { resolve(undefined); return }
 
     let loaded = 0
     const done = () => { if (++loaded === 2) resolve() }
